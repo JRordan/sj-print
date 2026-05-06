@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>San Jose Printing Brothers — Family-Run Print Shop, Bay Area</title>
+<meta name="description" content="San Jose Printing Brothers is a family-run print shop serving the Bay Area. Business cards, brochures, large-format signage, custom apparel, and packaging — printed on premium stock and delivered fast." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAF7F1;
+    --paper-2: #F1ECE2;
+    --ink: #0E0C0A;
+    --ink-2: #2A2622;
+    --muted: #6B645B;
+    --rule: #D9D2C4;
+    --press: #D62828;
+    --press-deep: #9D1B1B;
+    --accent-soft: #F4DAD5;
+    --max: 1240px;
+    --radius: 4px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--ink); color: var(--paper); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ========== TYPOGRAPHY ========== */
+  .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 1;
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+  }
+
+  .eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--press);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--press);
+  }
+
+  /* ========== NAV ========== */
+  nav.top {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 247, 241, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    z-index: 100;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    font-variation-settings: 'opsz' 36, 'WONK' 1;
+    letter-spacing: -0.015em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink);
+  }
+  .logo-mark {
+    width: 56px;
+    height: 34px;
+    flex-shrink: 0;
+    display: block;
+  }
+  .logo-text-wrap {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .logo-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a:hover { color: var(--press); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: var(--radius);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-primary:hover {
+    background: var(--press);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-arrow {
+    background: none;
+    color: var(--ink);
+    padding: 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    padding-bottom: 4px;
+  }
+  .btn-arrow:hover { color: var(--press); border-color: var(--press); gap: 14px; }
+
+  /* ========== HERO ========== */
+  .hero {
+    padding: 90px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(14,12,10,0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: end;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 7.5vw, 110px);
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+    color: var(--press);
+  }
+  .hero-meta { margin-bottom: 12px; }
+  .hero p.lead {
+    font-size: 18px;
+    color: var(--ink-2);
+    max-width: 480px;
+    margin: 28px 0 36px;
+    line-height: 1.55;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .hero-side {
+    border-left: 1px solid var(--rule);
+    padding-left: 32px;
+    padding-bottom: 12px;
+  }
+  .hero-stats {
+    display: grid;
+    gap: 24px;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 52px;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 144;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .stat-num sup { font-size: 22px; color: var(--press); margin-left: 2px; vertical-align: top; }
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .marquee {
+    margin-top: 100px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: marquee 40s linear infinite;
+  }
+  .marquee span {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0 28px;
+    color: var(--ink-2);
+  }
+  .marquee span.dot {
+    color: var(--press);
+    font-style: normal;
+    font-size: 10px;
+    vertical-align: middle;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ========== SECTIONS ========== */
+  section { padding: 110px 0; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 70px;
+    align-items: end;
+  }
+  .section-head h2 {
+    font-size: clamp(36px, 5vw, 68px);
+  }
+  .section-head h2 em {
+    font-style: italic;
+    color: var(--press);
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+  }
+  .section-head p {
+    font-size: 17px;
+    color: var(--ink-2);
+    max-width: 460px;
+    margin-left: auto;
+  }
+
+  /* ========== HOW IT WORKS ========== */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .how-step {
+    padding: 36px 32px 36px 0;
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .how-step:last-child { border-right: none; padding-right: 0; }
+  .how-step:not(:first-child) { padding-left: 32px; }
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--press);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 36;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 14px;
+  }
+  .step-text { font-size: 15px; color: var(--ink-2); line-height: 1.6; }
+  .step-icon {
+    width: 36px; height: 36px;
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+
+  /* ========== SERVICES ========== */
+  .services { background: var(--paper-2); }
+  .service-list { display: grid; gap: 0; }
+  .service-row {
+    display: grid;
+    grid-template-columns: 80px 1.4fr 1fr 0.6fr;
+    gap: 32px;
+    align-items: center;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule);
+    transition: padding 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .service-row:last-child { border-bottom: 1px solid var(--rule); }
+  .service-row:hover { padding-left: 16px; padding-right: 16px; background: var(--paper); }
+  .service-num {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--press);
+    font-weight: 500;
+  }
+  .service-name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 400;
+    font-variation-settings: 'opsz' 72, 'WONK' 1;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .service-desc {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .service-arrow {
+    justify-self: end;
+    width: 44px; height: 44px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: all 0.25s;
+  }
+  .service-row:hover .service-arrow {
+    background: var(--press);
+    border-color: var(--press);
+    color: var(--paper);
+    transform: rotate(-45deg);
+  }
+
+  /* ========== BENEFITS ========== */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .benefit {
+    padding: 32px 28px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    transition: all 0.3s;
+  }
+  .benefit:hover {
+    border-color: var(--ink);
+    transform: translateY(-3px);
+  }
+  .benefit-icon {
+    width: 32px; height: 32px;
+    margin-bottom: 22px;
+    color: var(--press);
+  }
+  .benefit h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.15;
+  }
+  .benefit p {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+
+  /* ========== PORTFOLIO STRIP ========== */
+  .portfolio {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .portfolio .eyebrow { color: var(--accent-soft); }
+  .portfolio .eyebrow::before { background: var(--accent-soft); }
+  .portfolio .section-head h2 em { color: var(--accent-soft); }
+  .portfolio .section-head p { color: rgba(250, 247, 241, 0.7); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 16px;
+  }
+  .portfolio-tile {
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s;
+  }
+  .portfolio-tile:hover { transform: scale(0.98); }
+  .portfolio-tile:nth-child(1) { grid-row: span 2; }
+  .portfolio-tile-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s ease;
+  }
+  .portfolio-tile:hover .portfolio-tile-bg { transform: scale(1.06); }
+  .pt-1 { background: linear-gradient(135deg, #D62828 0%, #6B1F1F 100%); }
+  .pt-2 { background:
+    repeating-linear-gradient(45deg, #F4DAD5, #F4DAD5 12px, #FAF7F1 12px, #FAF7F1 24px); }
+  .pt-3 { background: linear-gradient(180deg, #2A2622 0%, #0E0C0A 100%); }
+  .pt-4 { background: radial-gradient(circle at 30% 30%, #D62828 0%, #2A2622 70%); }
+  .pt-5 { background: linear-gradient(135deg, #F1ECE2 0%, #D9D2C4 100%); }
+
+  .portfolio-tile-content {
+    position: absolute;
+    inset: 0;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--paper);
+    z-index: 2;
+  }
+  .pt-2 .portfolio-tile-content, .pt-5 .portfolio-tile-content { color: var(--ink); }
+  .portfolio-tile h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .portfolio-tile small {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    font-weight: 600;
+  }
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .quote {
+    padding: 36px 32px;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+  .quote::before {
+    content: '"';
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    font-family: 'Fraunces', serif;
+    font-size: 80px;
+    color: var(--press);
+    line-height: 1;
+    font-style: italic;
+  }
+  .quote-text {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-variation-settings: 'opsz' 36;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-top: 28px;
+  }
+  .quote-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+  }
+  .quote-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--press);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .quote-name { font-weight: 600; font-size: 14px; }
+  .quote-role { font-size: 12px; color: var(--muted); }
+
+  /* ========== ABOUT / CTA ========== */
+  .cta {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 130px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(250,247,241,0.06) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .cta h2 {
+    font-size: clamp(48px, 7vw, 96px);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .cta h2 em {
+    font-style: italic;
+    color: var(--accent-soft);
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+  }
+  .cta p {
+    font-size: 18px;
+    max-width: 540px;
+    margin: 0 auto 44px;
+    color: rgba(250, 247, 241, 0.75);
+    position: relative;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .cta .btn-primary { background: var(--press); }
+  .cta .btn-primary:hover { background: var(--paper); color: var(--ink); }
+  .cta .btn-secondary { color: var(--paper); border-color: var(--paper); }
+  .cta .btn-secondary:hover { background: var(--paper); color: var(--ink); }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--paper-2);
+    padding: 80px 0 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  .footer-brand { max-width: 320px; }
+  .footer-brand p {
+    margin-top: 20px;
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  footer h5 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 10px; font-size: 14px; }
+  footer li a { transition: color 0.2s; }
+  footer li a:hover { color: var(--press); }
+  .footer-bar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ========== ANIMATIONS ========== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-up.delay-1 { transition-delay: 0.1s; }
+  .fade-up.delay-2 { transition-delay: 0.2s; }
+  .fade-up.delay-3 { transition-delay: 0.3s; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 900px) {
+    .nav-links a:not(.btn) { display: none; }
+    .logo { font-size: 16px; gap: 10px; }
+    .logo-eyebrow { display: none; }
+    .logo-mark { width: 48px; height: 30px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-side { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 32px; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stat-num { font-size: 36px; }
+    .section-head { grid-template-columns: 1fr; gap: 24px; }
+    .section-head p { margin-left: 0; }
+    .how-grid { grid-template-columns: 1fr; }
+    .how-step { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 0 !important; }
+    .how-step:last-child { border-bottom: none; }
+    .service-row { grid-template-columns: 40px 1fr 40px; }
+    .service-desc { display: none; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
+    .portfolio-tile:nth-child(1) { grid-row: auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bar { flex-direction: column; gap: 12px; }
+    section { padding: 70px 0; }
+    .container { padding: 0 22px; }
+    .nav-inner { padding: 14px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="top">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 56 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <clipPath id="navOverlap"><circle cx="36" cy="17" r="15"/></clipPath>
+        </defs>
+        <circle cx="20" cy="17" r="15" fill="#0E0C0A"/>
+        <circle cx="36" cy="17" r="15" fill="#D62828"/>
+        <g clip-path="url(#navOverlap)">
+          <circle cx="20" cy="17" r="15" fill="#5A1414"/>
+        </g>
+        <text x="20" y="23" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="500" font-style="italic" fill="#FAF7F1">S</text>
+        <text x="36" y="23" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="500" font-style="italic" fill="#FAF7F1">J</text>
+      </svg>
+      <span class="logo-text-wrap">
+        <span class="logo-eyebrow">SAN JOSE</span>
+        <span>Printing Brothers</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary">Get a Quote →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow hero-meta">Two brothers · One press · San Jose</div>
+        <h1 class="display fade-up">
+          Print that<br>
+          <em>holds weight.</em>
+        </h1>
+        <p class="lead fade-up delay-1">
+          A family-run print shop in the heart of San Jose. We print premium business cards, brochures, large-format signage, custom apparel, and packaging on responsibly sourced stock — and deliver across the Bay in days, not weeks.
+        </p>
+        <div class="hero-ctas fade-up delay-2">
+          <a href="#contact" class="btn btn-primary">Start a Project →</a>
+          <a href="#services" class="btn btn-secondary">Browse Services</a>
+        </div>
+      </div>
+      <aside class="hero-side fade-up delay-3">
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">2.4M<sup>+</sup></div>
+            <div class="stat-label">Pieces printed last year</div>
+          </div>
+          <div>
+            <div class="stat-num">48<sup>hr</sup></div>
+            <div class="stat-label">Standard turnaround on most jobs</div>
+          </div>
+          <div>
+            <div class="stat-num">96<sup>%</sup></div>
+            <div class="stat-label">Customers reorder within 12 months</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Marquee strip -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Business Cards</span><span class="dot">●</span>
+      <span>Brochures</span><span class="dot">●</span>
+      <span>Large-Format Signage</span><span class="dot">●</span>
+      <span>Custom Apparel</span><span class="dot">●</span>
+      <span>Packaging &amp; Labels</span><span class="dot">●</span>
+      <span>Event Collateral</span><span class="dot">●</span>
+      <span>Stickers &amp; Decals</span><span class="dot">●</span>
+      <span>Foil &amp; Letterpress</span><span class="dot">●</span>
+      <span>Business Cards</span><span class="dot">●</span>
+      <span>Brochures</span><span class="dot">●</span>
+      <span>Large-Format Signage</span><span class="dot">●</span>
+      <span>Custom Apparel</span><span class="dot">●</span>
+      <span>Packaging &amp; Labels</span><span class="dot">●</span>
+      <span>Event Collateral</span><span class="dot">●</span>
+      <span>Stickers &amp; Decals</span><span class="dot">●</span>
+      <span>Foil &amp; Letterpress</span><span class="dot">●</span>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section id="how">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">How it works</div>
+        <h2 class="display">From file<br><em>to finished.</em></h2>
+      </div>
+      <p>Three steps, no surprises. Upload your art, approve a digital proof, and have your order in hand. We handle the rest.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-step fade-up">
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 3v12M7 8l5-5 5 5M4 17v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
+        </svg>
+        <span class="step-num">— 01</span>
+        <h3 class="step-title">Upload your design</h3>
+        <p class="step-text">Drop in a PDF, AI, PSD, or PNG. Not press-ready? Our prepress team will flag bleed, color, and resolution issues before anything hits the press.</p>
+      </div>
+      <div class="how-step fade-up delay-1">
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <span class="step-num">— 02</span>
+        <h3 class="step-title">Approve a proof</h3>
+        <p class="step-text">A free digital proof within four business hours. Need a physical proof on your final stock? We do those too — typically same-day pickup.</p>
+      </div>
+      <div class="how-step fade-up delay-2">
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M3 7l9-4 9 4v10l-9 4-9-4z"/>
+          <path d="M3 7l9 4 9-4M12 11v10"/>
+        </svg>
+        <span class="step-num">— 03</span>
+        <h3 class="step-title">Pickup or delivery</h3>
+        <p class="step-text">Same-day local pickup at our San Jose shop, free Bay Area delivery on orders over $250, or carbon-neutral nationwide shipping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Services</div>
+        <h2 class="display">Everything we<br><em>put to press.</em></h2>
+      </div>
+      <p>Eight core service lines, dozens of finishes, and the flexibility to take on whatever your brand needs — from a 100-card run to a 50,000-piece direct mail campaign.</p>
+    </div>
+
+    <div class="service-list">
+      <div class="service-row">
+        <span class="service-num">01</span>
+        <h3 class="service-name">Business Cards</h3>
+        <p class="service-desc">Standard, premium 32pt, soft-touch, foil, letterpress, and edge-painted finishes. Starting at $39 / 100.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">02</span>
+        <h3 class="service-name">Brochures &amp; Flyers</h3>
+        <p class="service-desc">Tri-folds, bi-folds, gate-folds, and saddle-stitched booklets. Coated and uncoated stocks up to 100lb cover.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">03</span>
+        <h3 class="service-name">Large-Format Signage</h3>
+        <p class="service-desc">Banners, pop-up displays, foam board, A-frames, and wall-mount graphics up to 96 inches wide.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">04</span>
+        <h3 class="service-name">Custom Apparel</h3>
+        <p class="service-desc">Screen printing, DTG, and embroidery on tees, hoodies, hats, and tote bags. Low minimums, fast turns.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">05</span>
+        <h3 class="service-name">Packaging &amp; Labels</h3>
+        <p class="service-desc">Custom mailer boxes, product labels, tissue, hang tags, and short-run retail packaging for DTC brands.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">06</span>
+        <h3 class="service-name">Stickers &amp; Decals</h3>
+        <p class="service-desc">Die-cut, kiss-cut, holographic, transparent, and weatherproof vinyl. Sheet and roll formats available.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">07</span>
+        <h3 class="service-name">Event Collateral</h3>
+        <p class="service-desc">Programs, name badges, lanyards, table tents, and wayfinding for conferences, weddings, and pop-ups.</p>
+        <span class="service-arrow">→</span>
+      </div>
+      <div class="service-row">
+        <span class="service-num">08</span>
+        <h3 class="service-name">Specialty Finishes</h3>
+        <p class="service-desc">Foil stamping, embossing, debossing, spot UV, letterpress, and edge painting for premium projects.</p>
+        <span class="service-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BENEFITS ========== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Why the brothers</div>
+        <h2 class="display">More than a<br><em>print shop.</em></h2>
+      </div>
+      <p>We've optimized every step — from prepress to fulfillment — so you spend less time managing print and more time on the work that matters.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit fade-up">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 2"/>
+        </svg>
+        <h3>48-Hour Turnaround</h3>
+        <p>Most stock orders ship within two business days. Need it sooner? Same-day rush is available on select products.</p>
+      </div>
+      <div class="benefit fade-up delay-1">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 11l3 3 7-7"/>
+          <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>
+        </svg>
+        <h3>Free Prepress Review</h3>
+        <p>Every file is checked by a real person for bleed, color, and resolution before going to press. No surprise reprints.</p>
+      </div>
+      <div class="benefit fade-up delay-2">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 12l2-2 4 4 8-8 4 4"/>
+          <path d="M3 18h18"/>
+        </svg>
+        <h3>Color-Accurate Proofs</h3>
+        <p>G7-certified workflow with calibrated proofing on the actual stock you're ordering. What you approve is what you get.</p>
+      </div>
+      <div class="benefit fade-up delay-3">
+        <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <h3>Bay Area Delivery</h3>
+        <p>Free local delivery on orders over $250 across San Jose, Oakland, and San Francisco. Same-day pickup always available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PORTFOLIO ========== -->
+<section id="work" class="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Recent work</div>
+        <h2 class="display">Pressed for<br><em>brands we love.</em></h2>
+      </div>
+      <p>A small slice of what's come through the shop lately — from indie wineries to YC-funded startups to community nonprofits.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-1"></div>
+        <div class="portfolio-tile-content">
+          <small>Branding</small>
+          <h4>Cardinal Coffee Co.<br>Identity System</h4>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-2"></div>
+        <div class="portfolio-tile-content">
+          <small>Packaging</small>
+          <h4>Heartwood Wine Labels</h4>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-3"></div>
+        <div class="portfolio-tile-content">
+          <small>Apparel</small>
+          <h4>Stellar Labs Merch Run</h4>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-4"></div>
+        <div class="portfolio-tile-content">
+          <small>Signage</small>
+          <h4>Mission Realty Banners</h4>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-5"></div>
+        <div class="portfolio-tile-content">
+          <small>Event</small>
+          <h4>SF Design Week 2026</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">★★★★★ &nbsp; 4.9 / 5 across 380+ reviews</div>
+        <h2 class="display">Trusted by Bay<br><em>Area builders.</em></h2>
+      </div>
+      <p>From founders to wedding planners to gallery curators — what people say after their first order.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="quote">
+        <p class="quote-text">Their prepress team caught a color issue in our packaging that would have cost us thousands to reprint. That kind of attention to detail is rare.</p>
+        <div class="quote-author">
+          <div class="quote-avatar">MK</div>
+          <div>
+            <div class="quote-name">Maya Krishnan</div>
+            <div class="quote-role">Co-founder, Heartwood Wines</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">We've been ordering business cards from the brothers for four years. Quality is consistent, turnaround is faster than any online printer, and the texture on the soft-touch is unmatched.</p>
+        <div class="quote-author">
+          <div class="quote-avatar">DR</div>
+          <div>
+            <div class="quote-name">Daniel Reyes</div>
+            <div class="quote-role">Partner, Mission Realty Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <p class="quote-text">Needed 200 conference programs printed in 36 hours. They didn't blink. Showed up early to the venue with everything boxed, sorted, and ready to go.</p>
+        <div class="quote-author">
+          <div class="quote-avatar">AL</div>
+          <div>
+            <div class="quote-name">Aisha Lin</div>
+            <div class="quote-role">Events Lead, SF Design Week</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section id="contact" class="cta">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;color:var(--accent-soft);margin-bottom:24px;">
+      Get started
+    </div>
+    <h2 class="display">Let's print<br><em>something good.</em></h2>
+    <p>Tell us about your project. We'll get back within four business hours with a quote, timeline, and any questions about your files.</p>
+    <div class="cta-buttons">
+      <a href="mailto:hello@sjprintingbros.com" class="btn btn-primary">Start a Project →</a>
+      <a href="tel:4085550100" class="btn btn-secondary">(408) 555-0100</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer id="about">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg class="logo-mark" viewBox="0 0 56 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <clipPath id="footOverlap"><circle cx="36" cy="17" r="15"/></clipPath>
+            </defs>
+            <circle cx="20" cy="17" r="15" fill="#0E0C0A"/>
+            <circle cx="36" cy="17" r="15" fill="#D62828"/>
+            <g clip-path="url(#footOverlap)">
+              <circle cx="20" cy="17" r="15" fill="#5A1414"/>
+            </g>
+            <text x="20" y="23" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="500" font-style="italic" fill="#FAF7F1">S</text>
+            <text x="36" y="23" text-anchor="middle" font-family="Fraunces, serif" font-size="17" font-weight="500" font-style="italic" fill="#FAF7F1">J</text>
+          </svg>
+          <span class="logo-text-wrap">
+            <span class="logo-eyebrow">SAN JOSE</span>
+            <span>Printing Brothers</span>
+          </span>
+        </div>
+        <p>Family-run print shop in San Jose, California. Founded by two brothers who grew up in the trade, we serve Bay Area businesses, creators, and event producers with an obsessive eye for craft. FSC-certified, G7-calibrated, and proudly carbon-neutral.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Business Cards</a></li>
+          <li><a href="#services">Brochures</a></li>
+          <li><a href="#services">Large Format</a></li>
+          <li><a href="#services">Apparel</a></li>
+          <li><a href="#services">Packaging</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Portfolio</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>1247 The Alameda<br>San Jose, CA 95126</li>
+          <li><a href="tel:4085550100">(408) 555-0100</a></li>
+          <li><a href="mailto:hello@sjprintingbros.com">hello@sjprintingbros.com</a></li>
+          <li>Mon–Fri · 8am–6pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2026 San Jose Printing Brothers. All rights reserved.</span>
+      <span>FSC® Certified · Carbon Neutral · G7 Master</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Lightweight scroll-reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach((el) => io.observe(el));
+
+  // Reveal hero text immediately on load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero .fade-up').forEach((el) => el.classList.add('in-view'));
+  });
+</script>
+
+</body>
+</html>
