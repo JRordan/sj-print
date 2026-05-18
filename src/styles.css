@@ -574,6 +574,102 @@ section { padding: 110px 0; }
 .cta .btn-secondary { color: var(--paper); border-color: var(--paper); }
 .cta .btn-secondary:hover { background: var(--paper); color: var(--ink); }
 
+/* ========== PRICING ========== */
+.pricing-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 48px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pricing-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 14px 28px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.pricing-tab-btn:hover { color: var(--ink); }
+.pricing-tab-btn.is-active {
+  color: var(--ink);
+  border-bottom-color: var(--press);
+}
+
+.pricing-panel-desc {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.price-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.price-table thead tr {
+  border-bottom: 1px solid var(--ink);
+}
+.price-table th {
+  padding: 10px 16px 12px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+}
+.price-table th:first-child { text-align: left; padding-left: 0; }
+.price-table td {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--rule);
+  text-align: right;
+  vertical-align: middle;
+}
+.price-table td:first-child { padding-left: 0; }
+.price-table tbody tr:last-child td { border-bottom: none; }
+.price-table tbody tr:hover td { background: var(--paper-2); }
+
+.item-name {
+  text-align: left !important;
+  font-weight: 500;
+}
+.item-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 17px;
+  font-variation-settings: 'opsz' 36;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pricing-cta-line {
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.pricing-cta-line .btn-arrow {
+  font-size: 14px;
+}
+
 /* ========== FOOTER ========== */
 footer {
   background: var(--paper-2);
@@ -646,6 +742,9 @@ footer li a:hover { color: var(--press); }
   .service-row { grid-template-columns: 40px 1fr 40px; }
   .service-desc { display: none; }
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-tab-btn { padding: 12px 18px; font-size: 13px; }
+  .price-table { font-size: 14px; }
+  .item-price { font-size: 15px; }
   .portfolio-grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
   .portfolio-tile:nth-child(1) { grid-row: auto; }
   .testimonials-grid { grid-template-columns: 1fr; }

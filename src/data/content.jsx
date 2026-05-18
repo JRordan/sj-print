@@ -3,6 +3,7 @@
 
 export const navLinks = [
   { href: '#services', label: 'Services' },
+  { href: '#pricing', label: 'Pricing' },
   { href: '#work', label: 'Work' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
@@ -161,6 +162,61 @@ export const testimonials = [
     role: 'Events Lead, SF Design Week',
   },
 ];
+
+export const pricing = {
+  note: 'Production-ready file required. No file? Design assistance available at $84/hr.',
+  categories: [
+    {
+      id: 'digital',
+      label: 'Digital Prints',
+      description: 'Full-color prints straight from your files — same-day on most standard sizes.',
+      qtys: ['100', '250', '500', '1,000'],
+      items: [
+        { name: 'Business Cards (3.5″ × 2″)', prices: ['$29', '$42', '$65', '$98'] },
+        { name: '4″ × 6″ Postcards',          prices: ['$24', '$36', '$58', '$90'] },
+        { name: '8.5″ × 11″ Flyers',          prices: ['$36', '$59', '$96', '$144'] },
+        { name: '8.5″ × 14″ Legal',            prices: ['$42', '$68', '$110', '$162'] },
+        { name: '11″ × 17″ Tabloid',           prices: ['$54', '$84', '$130', '—'] },
+        { name: 'Envelopes (#10)',             prices: ['$34', '$58', '$98', '$150'] },
+      ],
+    },
+    {
+      id: 'wideformat',
+      label: 'Wide-Format',
+      description: 'Flatbed printing on rigid and flexible media — banners, foam board, canvas, and more.',
+      qtys: ['Unit / Rate'],
+      items: [
+        { name: 'Paper Banner',                prices: ['$4.20 / sq ft'] },
+        { name: 'Foam Board',                  prices: ['$6.00 / sq ft'] },
+        { name: 'Canvas Print',                prices: ['$9.60 / sq ft'] },
+        { name: 'Poster (24″ × 36″)',          prices: ['$36 each'] },
+        { name: 'Retractable Banner (33″ × 78″)', prices: ['$150 each'] },
+      ],
+    },
+    {
+      id: 'blueprints',
+      label: 'Blueprints',
+      description: 'Architectural and engineering drawings printed from your digital files.',
+      qtys: ['Per Sheet'],
+      items: [
+        { name: '11″ × 17″',  prices: ['$2.40'] },
+        { name: '24″ × 36″',  prices: ['$7.20'] },
+        { name: '30″ × 42″',  prices: ['$9.60'] },
+      ],
+    },
+    {
+      id: 'copies',
+      label: 'Copies & Design',
+      description: 'Walk-in copies at the counter and design help when you need it.',
+      qtys: ['Per Page / Hr'],
+      items: [
+        { name: 'B&W Copy (8.5″ × 11″)',   prices: ['$0.18'] },
+        { name: 'Color Copy (8.5″ × 11″)', prices: ['$0.60'] },
+        { name: 'Design Assistance',        prices: ['$84 / hr'] },
+      ],
+    },
+  ],
+};
 
 export const footerColumns = [
   {

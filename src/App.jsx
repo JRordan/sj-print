@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import Services from './components/Services.jsx';
 import Benefits from './components/Benefits.jsx';
+import Pricing from './components/Pricing.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import Testimonials from './components/Testimonials.jsx';
 import CTA from './components/CTA.jsx';
@@ -19,6 +20,7 @@ export default function App() {
       <HowItWorks />
       <Services />
       <Benefits />
+      <Pricing />
       <Portfolio />
       <Testimonials />
       <CTA />
