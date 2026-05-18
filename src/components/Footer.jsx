@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Logo tagline="Print" clipId="footOverlap" />
+            <Logo light />
             <p>
               Local print shop in San Jose, California. Founded by two real
               estate partners who print daily, we serve Bay Area businesses,

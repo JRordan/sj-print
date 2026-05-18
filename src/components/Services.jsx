@@ -19,13 +19,18 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="service-list">
+        <div className="services-grid">
           {services.map((s) => (
-            <div className="service-row" key={s.num}>
-              <span className="service-num">{s.num}</span>
-              <h3 className="service-name">{s.name}</h3>
-              <p className="service-desc">{s.desc}</p>
-              <span className="service-arrow">→</span>
+            <div className="service-card" key={s.num}>
+              <div className="service-card-img">
+                <img src={s.image} alt={s.name} loading="lazy" />
+              </div>
+              <div className="service-card-body">
+                <div className="service-card-num">{s.num}</div>
+                <h3 className="service-card-name">{s.name}</h3>
+                <p className="service-card-desc">{s.desc}</p>
+                <span className="service-card-link">Learn more →</span>
+              </div>
             </div>
           ))}
         </div>

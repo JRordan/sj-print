@@ -2,14 +2,7 @@ export default function CTA() {
   return (
     <section id="contact" className="cta">
       <div className="container">
-        <div
-          className="eyebrow"
-          style={{
-            justifyContent: 'center',
-            color: 'var(--accent-soft)',
-            marginBottom: 24,
-          }}
-        >
+        <div className="eyebrow" style={{ justifyContent: 'center', marginBottom: 24 }}>
           Get started
         </div>
         <h2 className="display">
@@ -24,7 +17,7 @@ export default function CTA() {
           <a href="mailto:wecare@sjprint.us" className="btn btn-primary">
             Start a Project →
           </a>
-          <a href="tel:4085027264" className="btn btn-secondary">
+          <a href="tel:4085027264" className="btn btn-outline-light">
             (408) 502-7264
           </a>
         </div>

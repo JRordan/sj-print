@@ -5,8 +5,8 @@ export default function Nav() {
   return (
     <nav className="top">
       <div className="nav-inner">
-        <a href="#" style={{ textDecoration: 'none' }}>
-          <Logo tagline="Printing Local" clipId="navOverlap" />
+        <a href="#">
+          <Logo />
         </a>
         <div className="nav-links">
           {navLinks.map((link) => (

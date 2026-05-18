@@ -63,31 +63,37 @@ export const services = [
     num: '01',
     name: 'Business Cards',
     desc: 'Standard, premium 32pt, soft-touch, foil, letterpress, and edge-painted finishes. Starting at $39 / 100.',
+    image: '/images/services/business-cards.jpg',
   },
   {
     num: '02',
     name: 'Brochures & Flyers',
     desc: 'Tri-folds, bi-folds, gate-folds, and saddle-stitched booklets. Coated and uncoated stocks up to 100lb cover.',
+    image: '/images/services/brochures.jpg',
   },
   {
     num: '03',
     name: 'Large-Format Signage',
     desc: 'Banners, pop-up displays, foam board, A-frames, and wall-mount graphics up to 96 inches wide.',
+    image: '/images/services/signage.jpg',
   },
   {
     num: '04',
     name: 'Stickers & Decals',
     desc: 'Die-cut, kiss-cut, holographic, transparent, and weatherproof vinyl. Sheet and roll formats available.',
+    image: '/images/services/stickers.jpg',
   },
   {
     num: '05',
     name: 'Event Collateral',
     desc: 'Programs, name badges, lanyards, table tents, and wayfinding for conferences, weddings, and pop-ups.',
+    image: '/images/services/events.jpg',
   },
   {
     num: '06',
     name: 'Specialty Finishes',
     desc: 'Foil stamping, embossing, debossing, spot UV, letterpress, and edge painting for premium projects.',
+    image: '/images/services/specialty.jpg',
   },
 ];
 
@@ -135,11 +141,11 @@ export const benefits = [
 ];
 
 export const portfolio = [
-  { category: 'Branding', title: 'Cardinal Coffee Co. Identity System', bg: 'pt-1' },
-  { category: 'Packaging', title: 'Heartwood Wine Labels', bg: 'pt-2' },
-  { category: 'Apparel', title: 'Stellar Labs Merch Run', bg: 'pt-3' },
-  { category: 'Signage', title: 'Mission Realty Banners', bg: 'pt-4' },
-  { category: 'Event', title: 'SF Design Week 2026', bg: 'pt-5' },
+  { category: 'Real Estate', title: 'Property Listing Flyer', image: '/images/portfolio/product10.jpeg' },
+  { category: 'Real Estate', title: 'Open House Postcard', image: '/images/portfolio/product1.jpeg' },
+  { category: 'Real Estate', title: 'Open House Mailer', image: '/images/portfolio/product5.jpeg' },
+  { category: 'Real Estate', title: 'Just Sold Postcard', image: '/images/portfolio/product2.jpeg' },
+  { category: 'Real Estate', title: 'Just Listed Postcard', image: '/images/portfolio/product6.jpeg' },
 ];
 
 export const testimonials = [

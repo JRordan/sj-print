@@ -13,15 +13,20 @@ export default function Portfolio() {
             </h2>
           </div>
           <p>
-            A small slice of what's come through the shop lately — from indie
-            wineries to YC-funded startups to community nonprofits.
+            A slice of what's come through the shop lately — real estate agents,
+            local businesses, event producers, and everyone in between.
           </p>
         </div>
 
         <div className="portfolio-grid">
           {portfolio.map((tile) => (
             <div className="portfolio-tile" key={tile.title}>
-              <div className={`portfolio-tile-bg ${tile.bg}`}></div>
+              <img
+                src={tile.image}
+                alt={tile.title}
+                className="portfolio-tile-img"
+                loading="lazy"
+              />
               <div className="portfolio-tile-content">
                 <small>{tile.category}</small>
                 <h4>{tile.title}</h4>
