@@ -47,8 +47,8 @@ export const howSteps = [
   },
   {
     num: '— 03',
-    title: 'Pickup or delivery',
-    text: 'Same-day local pickup at our San Jose shop, free Bay Area delivery on orders over $250, or carbon-neutral nationwide shipping.',
+    title: 'Delivered to you',
+    text: 'Same-day, free Bay Area delivery on orders over $250. Ordered to Shipped in 2 hours.',
     icon: (
       <>
         <path d="M3 7l9-4 9 4v10l-9 4-9-4z" />
