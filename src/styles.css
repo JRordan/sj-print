@@ -627,7 +627,37 @@ section { padding: 110px 0; }
 }
 .pricing-tab-btn:hover { color: var(--navy); }
 .pricing-tab-btn.is-active { color: var(--navy); border-bottom-color: var(--gold); }
-.pricing-panel-desc { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+.pricing-panel-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.pricing-panel-desc { font-size: 15px; color: var(--muted); margin-bottom: 0; flex: 1; min-width: 0; }
+.sided-toggle {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sided-btn {
+  padding: 8px 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.sided-btn + .sided-btn { border-left: 1px solid var(--rule); }
+.sided-btn.is-active { background: var(--navy); color: var(--white); }
+.sided-btn:not(.is-active):hover { background: var(--light); color: var(--navy); }
 .price-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .price-table { width: 100%; border-collapse: collapse; font-size: 15px; }
 .price-table thead tr { border-bottom: 2px solid var(--navy); }
@@ -660,6 +690,17 @@ section { padding: 110px 0; }
   letter-spacing: -0.01em;
   color: var(--navy);
 }
+.price-group-row td {
+  background: var(--light);
+  padding: 7px 16px 7px 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: none !important;
+}
+.price-group-row:hover td { background: var(--light) !important; }
 .pricing-cta-line {
   margin-top: 40px;
   font-size: 14px;
@@ -750,4 +791,40 @@ footer li a:hover { color: var(--gold); }
   .services-grid { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+
+  /* Stacked table layout — no horizontal scroll */
+  .price-table-scroll { overflow-x: visible; }
+  .price-table thead { display: none; }
+  .price-table,
+  .price-table tbody,
+  .price-table tr,
+  .price-table td { display: block; width: 100%; box-sizing: border-box; }
+  .price-table tbody tr { padding: 14px 0 10px; border-bottom: 1px solid var(--rule); }
+  .price-table tbody tr:last-child { border-bottom: none; }
+  .price-table tbody tr:hover td { background: none; }
+  .price-table td { padding: 3px 0; border: none; text-align: left; }
+  .price-table td.item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    padding-bottom: 6px;
+  }
+  .price-table td.item-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 14px;
+    padding: 2px 0;
+  }
+  .price-table td.item-price::before {
+    content: attr(data-col);
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .price-group-row { padding: 0 !important; border-bottom: none !important; }
+  .price-group-row td { padding: 12px 0 4px !important; border: none !important; }
 }
