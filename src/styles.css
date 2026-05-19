@@ -698,6 +698,7 @@ section { padding: 110px 0; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+  text-align: left;
   border-bottom: none !important;
 }
 .price-group-row:hover td { background: var(--light) !important; }

@@ -10,7 +10,7 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { num: '5,000', sup: '+', label: 'Pieces printed this year' },
+  { num: 'Same-Day', sup: '', label: 'Printing Available' },
   { num: '2', sup: 'hr', label: 'Turnaround on most jobs' },
   { num: '100', sup: '%', label: 'Satisfaction Guarenteed' },
 ];
@@ -191,6 +191,7 @@ export const pricing = {
       id: 'wideformat',
       label: 'Wide-Format',
       description: 'Flatbed printing on rigid and flexible media — banners, canvas, aluminum, acrylic, and more.',
+      itemLabel: 'Size',
       qtys: ['Price'],
       items: [
         { group: 'Vinyl Banners' },
@@ -226,6 +227,7 @@ export const pricing = {
       id: 'copies',
       label: 'Copies',
       description: 'Walk-in copies at the counter — black & white and full color in three paper sizes.',
+      itemLabel: 'Size',
       qtys: ['1-Sided', '2-Sided'],
       items: [
         { group: 'B&W — White Paper' },

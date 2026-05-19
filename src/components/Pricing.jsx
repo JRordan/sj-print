@@ -61,7 +61,7 @@ export default function Pricing() {
             <table className="price-table">
               <thead>
                 <tr>
-                  <th>Item</th>
+                  <th>{cat.itemLabel ?? 'Item'}</th>
                   {cat.qtys.map((q) => (
                     <th key={q}>{q}</th>
                   ))}
@@ -80,7 +80,7 @@ export default function Pricing() {
                     ? (sided === 2 ? (item.prices2 ?? item.prices1) : item.prices1)
                     : item.prices;
                   return (
-                    <tr key={item.name}>
+                    <tr key={idx}>
                       <td className="item-name">{item.name}</td>
                       {prices.map((p, i) => (
                         <td key={i} className="item-price" data-col={cat.qtys[i]}>{p}</td>
