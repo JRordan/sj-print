@@ -12,7 +12,7 @@ export default function Pricing() {
           <div>
             <span className="eyebrow">Pricing</span>
             <h2 className="display">
-              Honest,<br /><em>upfront</em> rates
+              Honest,<br /><em>competitive</em> rates
             </h2>
           </div>
           <p>{pricing.note}</p>
