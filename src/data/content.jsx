@@ -273,7 +273,7 @@ export const footerColumns = [
   {
     heading: 'Contact',
     links: [
-      { href: 'tel:4085027260', label: '(408) 502-7264' },
+      { href: 'tel:3304001931', label: '(330) 400-1931' },
       { href: 'mailto:wecare@sjprint.us', label: 'wecare@sjprint.us' },
       { href: null, label: 'Mon–Fri · 8am–6pm' },
     ],
