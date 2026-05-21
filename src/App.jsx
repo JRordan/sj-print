@@ -5,7 +5,7 @@ import Services from './components/Services.jsx';
 import Benefits from './components/Benefits.jsx';
 import Pricing from './components/Pricing.jsx';
 import Portfolio from './components/Portfolio.jsx';
-import Testimonials from './components/Testimonials.jsx';
+// import Testimonials from './components/Testimonials.jsx';
 import CTA from './components/CTA.jsx';
 import Footer from './components/Footer.jsx';
 import useFadeUp from './hooks/useFadeUp.js';
@@ -22,7 +22,7 @@ export default function App() {
       <Benefits />
       <Pricing />
       <Portfolio />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CTA />
       <Footer />
     </>
