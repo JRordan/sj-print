@@ -17,8 +17,8 @@ export default function CTA() {
           <a href="mailto:wecare@sjprint.us" className="btn btn-primary">
             Start a Project →
           </a>
-          <a href="tel:3304001931" className="btn btn-outline-light">
-            (330) 400-1931
+          <a href="tel:4086939146" className="btn btn-outline-light">
+            (408) 693-9146
           </a>
         </div>
       </div>
