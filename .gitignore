@@ -4,6 +4,9 @@ dist
 *.log
 
 # Local config / secrets — never commit. Use .env.example as a template.
+# .env.production IS committed (Vite convention) because it only holds the
+# public API base URL — see SECURITY.md for the VITE_* visibility rules.
 .env
 .env.*
 !.env.example
+!.env.production
