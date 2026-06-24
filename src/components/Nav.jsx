@@ -14,7 +14,7 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
-          <a href="#order" className="btn btn-primary">
+          <a href="/order/" className="btn btn-primary">
             Get a Quote →
           </a>
         </div>

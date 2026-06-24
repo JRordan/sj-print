@@ -22,7 +22,7 @@ export default function Hero() {
               marketing, and more — delivered across the Bay in hours, not weeks.
             </p>
             <div className="hero-ctas fade-up delay-2">
-              <a href="#order" className="btn btn-primary">
+              <a href="/order/" className="btn btn-primary">
                 Start a Project →
               </a>
               <a href="#services" className="btn btn-outline-light">

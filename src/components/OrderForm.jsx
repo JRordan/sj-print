@@ -36,6 +36,10 @@ export default function OrderForm() {
 
   const grouped = useMemo(() => groupProducts(products), [products]);
   const estimate = useMemo(() => estimateOrder(productsById, items), [productsById, items]);
+  const hasPricedItem = items.some(
+    (it) => it.productId !== '' && it.productId !== CUSTOM && productsById.has(it.productId),
+  );
+  const hasCustomItem = items.some((it) => it.productId === CUSTOM);
 
   function updateItem(key, patch) {
     setItems((prev) => prev.map((it) => (it.key === key ? { ...it, ...patch } : it)));
@@ -187,9 +191,13 @@ export default function OrderForm() {
           <div className="order-footer">
             <div className="order-estimate">
               <div className="order-estimate-label">Estimated total</div>
-              <div className="order-estimate-amount">{formatUSD(estimate)}</div>
+              <div className="order-estimate-amount">
+                {hasPricedItem ? formatUSD(estimate) : '—'}
+              </div>
               <p className="order-estimate-note">
-                Final price is set by the owner before your invoice goes out.
+                {hasCustomItem && !hasPricedItem
+                  ? 'Custom jobs are quoted after we review your request.'
+                  : 'Final price is set by the owner before your invoice goes out.'}
               </p>
             </div>
             <div className="order-submit-wrap">
