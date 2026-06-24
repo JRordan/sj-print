@@ -5,7 +5,7 @@ export const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#work', label: 'Work' },
-  { href: '#about', label: 'About' },
+  { href: '#order', label: 'Order' },
   { href: '#contact', label: 'Contact' },
 ];
 

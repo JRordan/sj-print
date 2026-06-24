@@ -95,7 +95,7 @@ export default function Pricing() {
 
         <p className="pricing-cta-line fade-up delay-3">
           Volume discounts available on larger runs.{' '}
-          <a href="#contact" className="btn-arrow btn">Request a quote →</a>
+          <a href="#order" className="btn-arrow btn">Request a quote →</a>
         </p>
       </div>
     </section>
