@@ -1,0 +1,11 @@
+# Pre-commit hooks. Install once with: uvx pre-commit install
+# Run manually across the repo with: uvx pre-commit run --all-files
+#
+# This is a public repo — gitleaks is the safety net against accidentally
+# committing secrets. See SECURITY.md for the rules.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      # Scans staged changes and blocks the commit if a secret is detected.
+      - id: gitleaks
