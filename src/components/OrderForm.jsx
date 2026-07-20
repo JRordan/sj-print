@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import useCatalog from '../hooks/useCatalog.js';
 import { submitOrder } from '../api.js';
 import {
+  defaultQuantityFor,
   defaultSidesFor,
   estimateItem,
   estimateOrder,
@@ -34,6 +35,29 @@ export default function OrderForm() {
   const [submitError, setSubmitError] = useState(null);
   const [success, setSuccess] = useState(null); // { confirmation_code }
 
+  // Smart default: once the catalog loads, pre-select the most common product
+  // on the still-pristine first row so the form opens with a real estimate.
+  // The user's job becomes scan-and-adjust rather than fill-from-scratch.
+  useEffect(() => {
+    if (loading) return;
+    const def = pickDefaultProduct(products);
+    if (!def) return;
+    setItems((prev) => {
+      const first = prev[0];
+      const pristine =
+        prev.length === 1 && first.productId === '' && first.customDescription === '';
+      if (!pristine) return prev;
+      return [
+        {
+          ...first,
+          productId: def.id,
+          sides: defaultSidesFor(def),
+          quantity: defaultQuantityFor(def),
+        },
+      ];
+    });
+  }, [loading, products]);
+
   const grouped = useMemo(() => groupProducts(products), [products]);
   const estimate = useMemo(() => estimateOrder(productsById, items), [productsById, items]);
   const hasPricedItem = items.some(
@@ -60,10 +84,22 @@ export default function OrderForm() {
     }
     const id = raw === '' ? '' : Number(raw);
     const product = id === '' ? null : productsById.get(id);
-    updateItem(key, {
-      productId: id,
-      sides: product ? defaultSidesFor(product) : null,
-    });
+    setItems((prev) =>
+      prev.map((it) => {
+        if (it.key !== key) return it;
+        const patch = {
+          productId: id,
+          sides: product ? defaultSidesFor(product) : null,
+        };
+        // Smart default: seed a realistic quantity when the row hasn't had one
+        // deliberately set yet (still at the initial 1), without clobbering a
+        // quantity the user chose before switching products.
+        if (product && it.quantity === 1) {
+          patch.quantity = defaultQuantityFor(product);
+        }
+        return { ...it, ...patch };
+      }),
+    );
   }
 
   async function handleSubmit(event) {
@@ -113,43 +149,6 @@ export default function OrderForm() {
         </div>
 
         <form className="order-form fade-up delay-1" onSubmit={handleSubmit} noValidate>
-          <div className="order-grid">
-            <label className="order-field">
-              <span>Your name</span>
-              <input
-                type="text"
-                required
-                autoComplete="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                disabled={submitting}
-              />
-            </label>
-
-            <label className="order-field">
-              <span>Email</span>
-              <input
-                type="email"
-                required
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={submitting}
-              />
-            </label>
-
-            <label className="order-field">
-              <span>Phone <em>(optional)</em></span>
-              <input
-                type="tel"
-                autoComplete="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                disabled={submitting}
-              />
-            </label>
-          </div>
-
           <fieldset className="order-items" disabled={submitting}>
             <legend>Items</legend>
             {loading && <p className="order-loading">Loading catalog…</p>}
@@ -187,6 +186,48 @@ export default function OrderForm() {
               disabled={submitting}
             />
           </label>
+
+          <div className="order-contact">
+            <p className="order-contact-lead">
+              Looks good? Tell us where to send your quote — no account needed.
+            </p>
+            <div className="order-grid">
+              <label className="order-field">
+                <span>Your name</span>
+                <input
+                  type="text"
+                  required
+                  autoComplete="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  disabled={submitting}
+                />
+              </label>
+
+              <label className="order-field">
+                <span>Email</span>
+                <input
+                  type="email"
+                  required
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={submitting}
+                />
+              </label>
+
+              <label className="order-field">
+                <span>Phone <em>(optional)</em></span>
+                <input
+                  type="tel"
+                  autoComplete="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  disabled={submitting}
+                />
+              </label>
+            </div>
+          </div>
 
           <div className="order-footer">
             <div className="order-estimate">
@@ -325,6 +366,14 @@ function OrderFormSuccess({ confirmationCode }) {
       </div>
     </section>
   );
+}
+
+// The most common order for this shop leads with business cards (see the
+// services list and pricing). Prefer it as the pre-selected default; fall
+// back to the first catalog product so the form always opens with a pick.
+function pickDefaultProduct(products) {
+  if (!products.length) return null;
+  return products.find((p) => /business card/i.test(p.name)) ?? products[0];
 }
 
 function groupProducts(products) {

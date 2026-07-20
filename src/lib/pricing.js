@@ -13,6 +13,22 @@ export function defaultSidesFor(product) {
   return productNeedsSides(product) ? 1 : null;
 }
 
+/**
+ * Smallest sensible order quantity for a product — the lowest tier's
+ * min_quantity (e.g. 100 for business cards), so a pre-selected product
+ * shows a realistic estimate instead of a single-unit rounding error.
+ */
+export function defaultQuantityFor(product) {
+  const sides = defaultSidesFor(product);
+  const relevant = (product.prices ?? []).filter((p) =>
+    productNeedsSides(product) ? p.sides === (sides ?? 1) : true,
+  );
+  const mins = relevant
+    .map((p) => p.min_quantity)
+    .filter((n) => Number.isFinite(n) && n > 0);
+  return mins.length ? Math.min(...mins) : 1;
+}
+
 /** Return the price tier that applies to a (sides, quantity) pair, or null. */
 function pickTier(product, sides, quantity) {
   const candidates = (product.prices ?? []).filter((p) =>

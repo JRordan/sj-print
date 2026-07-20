@@ -853,6 +853,19 @@ footer li a:hover { color: var(--gold); }
   gap: 20px;
 }
 
+.order-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+}
+.order-contact-lead {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
 .order-field {
   display: flex;
   flex-direction: column;
